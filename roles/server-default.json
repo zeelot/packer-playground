@@ -1,0 +1,10 @@
+{
+	"name": "server-mysql",
+	"json_class": "Chef::Role",
+	"description": "Role for all servers",
+	"chef_type": "role",
+
+	"run_list": [
+		"recipe[apt]"
+	]
+}

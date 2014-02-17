@@ -1,0 +1,13 @@
+{
+	"name": "server-nginx",
+	"description": "Role for nginx web servers.",
+	"chef_type": "role",
+	"json_class": "Chef::Role",
+
+	"run_list": [
+		"role[server-default]",
+		"recipe[php-fpm]",
+		"recipe[nginx]",
+		"recipe[nginx-sites]"
+	]
+}
