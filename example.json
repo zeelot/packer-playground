@@ -1,0 +1,37 @@
+{
+  "variables": {
+    "aws_access_key": "",
+    "aws_secret_key": "",
+    "mysql_debian_password": "",
+    "mysql_root_password": "",
+    "mysql_repl_password": ""
+  },
+  "builders": [{
+    "type": "amazon-ebs",
+    "access_key": "{{user `aws_access_key`}}",
+    "secret_key": "{{user `aws_secret_key`}}",
+    "region": "us-east-1",
+    "source_ami": "ami-de0d9eb7",
+    "instance_type": "m1.large",
+    "ssh_username": "ubuntu",
+    "ami_name": "packer-example {{timestamp}}"
+  }],
+  "provisioners": [{
+    "type": "chef-solo",
+    "cookbook_paths": ["cookbooks"],
+    "roles_path": "roles",
+    "data_bags_path": "data_bags",
+    "encrypted_data_bag_secret_path": ".chef/encrypted_data_bag_secret",
+    "run_list": [
+      "role[server-mysql]",
+      "role[server-nginx]"
+    ],
+    "json": {
+      "mysql": {
+        "server_debian_password": "{{user `mysql_debian_password`}}",
+        "server_root_password":   "{{user `mysql_root_password`}}",
+        "server_repl_password":   "{{user `mysql_repl_password`}}"
+      }
+    }
+  }]
+}
