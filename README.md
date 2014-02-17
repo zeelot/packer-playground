@@ -21,3 +21,10 @@ Run the packer tool with the configuration defined in `example.json`. Sensitive 
  - `vagrant up --provision`
 
 Start a **Vagrant** VM and force it to provision. I run this command to test my roles and cookbooks before running the **Packer** command simply because it's faster.
+
+Things
+======
+
+ - `gem install knife-solo_data_bag` (https://github.com/thbishop/knife-solo_data_bag)
+
+Installs a knife plugin specifically for creating data bags without a chef server.
