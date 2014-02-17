@@ -1,2 +1,4 @@
 variables.json
 packer_cache/*
+cookbooks/*
+.chef/*
