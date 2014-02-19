@@ -23,8 +23,8 @@
   }, {
     "type": "shell",
     "inline": [
-      "sudo mkdir -p /opt/some_site.worpd.com",
-      "sudo mv /tmp/app /opt/some_site.worpd.com/current",
+      "sudo mkdir -p /opt/some_site.aws.worpd.com",
+      "sudo mv /tmp/app /opt/some_site.aws.worpd.com/current",
       "sudo mkdir -p /var/www/nginx-default",
       "sudo chown -R ubuntu:ubuntu /var/www/nginx-default",
       "echo HELLO! >> /var/www/nginx-default/index.html"
